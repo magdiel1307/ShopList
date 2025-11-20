@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopList.Gui.Views.ShopListPage"
+             Title="ShopListPage">
+    <Grid
+        RowDefinitions="Auto,*"
+        Padding="8"
+        RowSpacing="6">
+        <Grid
+            Grid.Row="0"
+            Grid.Column="0"
+            RowDefinitions="Auto,Auto"
+            ColumnDefinitions="Auto,*,Auto,Auto"
+            RowSpacing="4"
+            ColumnSpacing="4">
+            <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            FontSize="Medium"
+            Text="Producto:"/>
+            <Entry
+            Grid.Row="0"
+            Grid.Column="1"
+            TextColor="Black"
+            FontSize="Medium"
+            BackgroundColor="#f0f0f0"/>
+
+            <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalOptions="Center"
+            HorizontalOptions="End"
+            FontSize="Medium"
+            Text="Cantidad:"/>
+            <Entry
+            Grid.Row="1"
+            Grid.Column="1"
+            TextColor="Black"
+            FontSize="Medium"
+            BackgroundColor="#f0f0f0"/>
+
+            <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            FontSize="Medium"
+            Text="+" />
+
+            <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            FontSize="Medium"
+            Text="X" />
+        </Grid>
+
+        <CollectionView
+            Grid.Row="1"
+            Grid.Column="0"
+            ItemsSource="{Binding Path=Items}"
+            EmptyView="Aún no se han registrado productos"
+            BackgroundColor="grey">
+
+        </CollectionView>
+    </Grid>
+</ContentPage>
