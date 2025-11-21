@@ -2,66 +2,90 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopList.Gui.Views.ShopListPage"
+             xmlns:model="clr-namespace:ShopList.Gui.Models"
              Title="ShopListPage">
+
+
     <Grid
-        RowDefinitions="Auto,*"
-        Padding="8"
-        RowSpacing="6">
+ Padding="8"
+ RowSpacing="6"
+ RowDefinitions="Auto,*"
+ >
+
         <Grid
-            Grid.Row="0"
-            Grid.Column="0"
-            RowDefinitions="Auto,Auto"
-            ColumnDefinitions="Auto,*,Auto,Auto"
-            RowSpacing="4"
-            ColumnSpacing="4">
+     RowSpacing="4"
+     ColumnSpacing="4"
+     Grid.Row="0"
+     Grid.Column="0"
+     RowDefinitions="Auto,Auto"
+     ColumnDefinitions="Auto,*,Auto,Auto"
+     >
             <Label
-            Grid.Row="0"
-            Grid.Column="0"
-            VerticalOptions="Center"
-            HorizontalOptions="End"
-            FontSize="Medium"
-            Text="Producto:"/>
+         Grid.Row="0"
+         Grid.Column="0"
+         VerticalOptions="Center"
+         HorizontalOptions="End"
+         Text="Producto: " FontSize="Medium"/>
             <Entry
-            Grid.Row="0"
-            Grid.Column="1"
-            TextColor="Black"
-            FontSize="Medium"
-            BackgroundColor="#f0f0f0"/>
-
+         Grid.Column="1"
+         Grid.Row="0"
+         BackgroundColor="Gray"
+             Text="{Binding NombreDelArticulo}"
+         />
             <Label
-            Grid.Row="1"
-            Grid.Column="0"
-            VerticalOptions="Center"
-            HorizontalOptions="End"
-            FontSize="Medium"
-            Text="Cantidad:"/>
+         VerticalOptions="Center"
+         HorizontalOptions="End"
+         Grid.Row="1"
+         Grid.Column="0"
+         Text="Cantidad: " FontSize="Medium"/>
             <Entry
-            Grid.Row="1"
-            Grid.Column="1"
-            TextColor="Black"
-            FontSize="Medium"
-            BackgroundColor="#f0f0f0"/>
-
+         Grid.Column="1"
+         Grid.Row="1"
+         BackgroundColor="Gray"
+             Text="{Binding CantidadAComprar}"
+     />
             <Button
-            Grid.Row="0"
-            Grid.Column="2"
-            FontSize="Medium"
-            Text="+" />
-
+         Grid.Column="2"
+         Grid.Row="0"
+         Text="+" FontSize="Medium"
+             Command="{Binding AgregarShopListItemCommand}"/>
             <Button
-            Grid.Row="1"
-            Grid.Column="2"
-            FontSize="Medium"
-            Text="X" />
+         Grid.Column="2"
+         Grid.Row="1"
+         Text="x" FontSize="Medium"/>
         </Grid>
 
         <CollectionView
-            Grid.Row="1"
-            Grid.Column="0"
-            ItemsSource="{Binding Path=Items}"
-            EmptyView="Aún no se han registrado productos"
-            BackgroundColor="grey">
+     Grid.Row="1"
+     Grid.Column="0"
+     EmptyView="Aun no se ah registrado prodctos"
+     BackgroundColor="Gray" ItemsSource="{Binding Items}"
+         SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate x:DataType="model:Item">
+
+                    <Border>
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="auto,*,auto" Padding="8,0" BackgroundColor="LightSeaGreen">
+
+                            <CheckBox IsChecked="{Binding Comprado}"/>
+                            <Label Text="{Binding Nombre}" Grid.Column="1" VerticalOptions="Center"/>
+                            <Label Text="{Binding Cantidad}" Grid.Column="2" VerticalOptions="Center"/>
+
+                        </Grid>
+                    </Border>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
 
         </CollectionView>
+
+         
     </Grid>
-</ContentPage>
+</ContentPage
