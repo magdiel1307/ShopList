@@ -32,7 +32,7 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Text="{Binding NombreDelArticulo}"
-                TextColor="DarkViolet"
+                TextColor="Black"
                 BackgroundColor="White"
                 FontSize="Medium"/>
                 <Label 
@@ -46,7 +46,7 @@
                Grid.Row="1"
                Grid.Column="1"
                Text="{Binding CantidadAComprar}"
-               TextColor="DarkViolet"
+               TextColor="Black"
                BackgroundColor="White"
                FontSize="Medium"/>
 
@@ -71,7 +71,7 @@
             ItemsSource="{Binding Items}"
             SelectedItem="{Binding OrigenSelecionado}"
             EmptyView="Aun no se han registrado Productos"
-            BackgroundColor="DarkRed">
+            BackgroundColor="AliceBlue">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Item">
