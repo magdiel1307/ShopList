@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopList.Gui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+01cefdae78b3fbcff83ec349a328aa7433954505")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+3aa8d86021b7ebd719870b0203222da9fd77154d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopList.Gui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopList.Gui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

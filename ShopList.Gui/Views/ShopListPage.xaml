@@ -71,7 +71,7 @@
             ItemsSource="{Binding Items}"
             SelectedItem="{Binding OrigenSelecionado}"
             EmptyView="Aun no se han registrado Productos"
-            BackgroundColor="AliceBlue">
+            BackgroundColor="BlueViolet">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Item">
